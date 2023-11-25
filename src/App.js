@@ -1,18 +1,13 @@
 import Player from "./components/Player";
+import classes from "./App.module.css";
 
 function App() {
   return (
     <main>
-      <div className="game-container">
-        <ol className="players">
+      <div className={classes.gameContainer}>
+        <ol className={classes.players}>
           <Player name="Player 1" symbol="X"/>
-          <li>
-            <span className="player">
-              <span className="player-name">Player 2</span>
-              <span className="player-symbol">O</span>
-            </span>
-            <button>Edit</button>
-          </li>
+          <Player name="Player 2" symbol="O"/>
         </ol>
 
         gameBoard
