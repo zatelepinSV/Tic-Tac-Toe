@@ -1,11 +1,16 @@
 import {useState} from "react";
 import classes from "./Player.module.css";
 
-const Player = ({ name, symbol }) => {
+const Player = ({ initialName, symbol }) => {
+  const [playerName, setPlayerName] = useState(initialName);
   const [isEditing, setIsEditing] = useState(false);
 
   const handleEditClick = () => {
     setIsEditing(isEditing=> !isEditing);
+  }
+
+  const handleChange = (event) => {
+    setPlayerName(event.target.value);
   }
 
   return (
@@ -13,9 +18,13 @@ const Player = ({ name, symbol }) => {
       <span className={classes.player}>
         {
           isEditing ? (
-            <input type="text" required value={name} />
+            <input type="text"
+                   required
+                   value={playerName}
+                   onChange={handleChange}
+            />
             ) : (
-            <span className={classes.name}>{name}</span>
+            <span className={classes.name}>{playerName}</span>
           )}
         <span className={classes.symbol}>{symbol}</span>
       </span>
