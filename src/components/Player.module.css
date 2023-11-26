@@ -35,3 +35,7 @@
     font-size: 1rem;
     color: #e1dec7;
 }
+
+.active span {
+    color: red;
+}

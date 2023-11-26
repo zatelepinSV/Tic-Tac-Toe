@@ -1,7 +1,7 @@
 import {useState} from "react";
 import classes from "./Player.module.css";
 
-const Player = ({ initialName, symbol }) => {
+const Player = ({ initialName, symbol, isActive }) => {
   const [playerName, setPlayerName] = useState(initialName);
   const [isEditing, setIsEditing] = useState(false);
 
@@ -14,7 +14,7 @@ const Player = ({ initialName, symbol }) => {
   }
 
   return (
-    <li>
+    <li className={isActive ? classes.active : undefined}>
       <span className={classes.player}>
         {
           isEditing ? (
