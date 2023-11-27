@@ -37,5 +37,18 @@
 }
 
 .active span {
-    color: red;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+
+@keyframes pulse {
+    0% {
+        color: #e1dec7;
+    }
+    50% {
+        color: #f84d4d;
+    }
+    100% {
+        color: #f10722;
+    }
 }
